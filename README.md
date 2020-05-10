@@ -16,7 +16,7 @@ sparse gradients according to the authors' Pytorch implementation.
 completely uninformative prior that will *NOT* yield viable results by the 
 authors' own admission (appendix K.3). According to the relevant section 
 of the paper, finding the right value of Lambda is beyond the scope of the 
-paper but an example Hyperas script that tunes Adam simultaneously on 
+paper but an example Hyperas script that tunes Vadam simultaneously on 
 learning rate and prior precision is offered here to address this.
 - This verision of the Vadam algorithm follows slides 11 of 15 from the 
 2018 ICML presentation [slides](https://goo.gl/ouZRkM), which is slightly 
