@@ -26,6 +26,8 @@ in the future. The ablation tests in appendix I.2 uses 1 Monte Carlo
 sample so this simplification may not adversely affect variation too badly. 
 See [here](https://thinklab.com/content/2693564) for more information on the 
 presentation.
+- Unlike the Keras implementation of Adam, the Pytorch code for Vadam performs 
+bias correction and that is added here as well.
        
 Usage (only required parameter is train_set_size, though prior_prec should 
 definitely be tuned):
