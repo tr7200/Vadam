@@ -51,6 +51,4 @@ This optimizer is suitable for approximating variational inference in a
 neural network to provide probablistic predictions that provide upper and 
 lower bounds.
 
-`python setup.py install` to install.
-
 MIT License
