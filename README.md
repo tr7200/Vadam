@@ -19,9 +19,12 @@ example Hyperas script that tunes Adam simultaneously on learning rate and
 prior precision is offered here to address this.
 - This verision of the Vadam algorithm follows slides 11 of 15 from the 
 2018 ICML presentation [slides](https://goo.gl/ouZRkM), which is slightly 
-different from the paper. In this version, the Keras backend fuzz factor is 
-used instead of Monte Carlo sampling of the gradients. See 
-[here](https://thinklab.com/content/2693564) for more information.
+different from the paper. In this implementation of the version of the 
+algorithm from the slides, only the Keras backend fuzz factor is added to 
+Adam instead of Monte Carlo sampling of the gradients, which may be added 
+in the future. See 
+[here](https://thinklab.com/content/2693564) for more information on the 
+presentation.
        
 Usage (only required parameter is train_set_size, though prior_prec should 
 be tuned):
@@ -34,16 +37,19 @@ be tuned):
     ...    
     model.compile(optimizer=Vadam(train_set_size=1000,
                           ...)
-     
+    
+    # train_set_size parameter is from X_train
+    
     result = model.fit(X_train,
                        Y_train,
                        ...)
 
-Tensorflow < 2.0 for the reason described above, made with Keras 2.3.1 but it
-should work with 2.2.4.
+Only works with Tensorflow < 2.0 for the reason described above, made with 
+Keras 2.3.1 but it should work with 2.2.4.
 
-This callback is more suitable for training with image or text data for hundreds of 
-epochs.
+This optimizer is suitable for approximating variational inference in a 
+neural network to provide probablistic predictions that provide upper and 
+lower bounds.
 
 `python setup.py install` to install.
 
