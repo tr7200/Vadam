@@ -1,7 +1,8 @@
 # Vadam
 
-Keras optimizer that modified Adam to approximate variational inference 
-following [arXiv 1712.07628](https://arxiv.org/abs/1806.04854).
+Keras optimizer that modifies the Adam optimizer to approximate variational 
+inference by perturbing weights following 
+[arXiv 1712.07628](https://arxiv.org/abs/1806.04854).
 
     Khan, M. E., Nielsen, D., Tangkaratt, V., Lin, W., Gal, Y., 
     & Srivastava, A. (2018). Fast and scalable bayesian deep 
