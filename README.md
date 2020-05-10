@@ -20,7 +20,7 @@ paper but an example Hyperas script that tunes Adam simultaneously on
 learning rate and prior precision is offered here to address this.
 - This verision of the Vadam algorithm follows slides 11 of 15 from the 
 2018 ICML presentation [slides](https://goo.gl/ouZRkM), which is slightly 
-different from the paper. In this simplified implementation of the version 
+different from the paper. In this implementation of the version 
 of the algorithm from the slides, only the epsilon fuzz factor is added to 
 parameter updates instead of mean and standard deviations derived from a 
 diagonal multivariate gaussian distribution, though those may be added 
