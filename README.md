@@ -20,14 +20,19 @@ learning rate and prior precision is offered here to address this.
 - This verision of the Vadam algorithm follows slides 11 of 15 from the 
 2018 ICML presentation [slides](https://goo.gl/ouZRkM), which is slightly 
 different from the paper. In this implementation of the version of the 
-algorithm from the slides, only the Keras backend fuzz factor is added to 
-Adam instead of Monte Carlo sampling of the gradients, which may be added 
-in the future. The ablation tests in appendix I.2 uses 1 Monte Carlo 
-sample so this simplification may not adversely affect variation too badly. 
+algorithm from the slides, only the epsilon fuzz factor is added to 
+parameter updates instead of mean and standard deviations derived from a 
+diagonal multivariate gaussian distribution, though those may be added 
+in the future.
+- The Pytorch version of Vadam also includes the ability to provide Monte 
+Carlos sampling to parameter updates, which is not included here. However, 
+the ablation tests in appendix I.2 uses 1 Monte Carlo sample so this 
+simplification may not adversely affect variation too badly. 
 See [here](https://thinklab.com/content/2693564) for more information on the 
 presentation.
 - Unlike the Keras implementation of Adam, the Pytorch code for Vadam performs 
-bias correction and that is added here as well.
+bias correction. Bias correction is therefore added here as well, but using 
+it resulted in numerical instability and code is left commented out.
        
 Usage (only required parameter is train_set_size, though prior_prec should 
 definitely be tuned):
