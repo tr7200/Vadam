@@ -35,6 +35,8 @@ presentation.
 of Adam as well as Vadam perform bias correction. Bias correction is 
 therefore added here as well, but using it resulted in numerical instability 
 and code is left commented out.
+- The Adagrad option is removed since it is not in the Pytorch 
+implementation.
        
 Usage (only required parameter is train_set_size, though prior_prec should 
 definitely be tuned):
