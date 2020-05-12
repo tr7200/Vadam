@@ -34,7 +34,7 @@ def model(data, labels, val_data, val_labels):
                       prior_prec={{uniform(1e-2, 25)}},
                       train_set_size=1000)
 
-    model.compile(loss='mean_squared_error',
+    model.compile(loss='kld',
                   metrics=['mae'],
                   optimizer=optimizer)
 
