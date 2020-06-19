@@ -11,7 +11,9 @@ inference by perturbing weights following
        
 - This optimizer supports Keras 2.3.1 since the Tensorflow 2.0 version of
 Adam separates gradients by sparsity, and this algorithm does not support 
-sparse gradients according to the authors' Pytorch implementation.
+sparse gradients according to the authors' Pytorch implementation. Here 
+is [one person's workaround](https://stackoverflow.com/a/37850906) to that
+issue.
 - The default prior precision value (Lambda in the paper) results in a 
 completely uninformative prior that will *NOT* yield viable results by the 
 authors' own admission (appendix K.3). According to the relevant section 
