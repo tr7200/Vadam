@@ -62,7 +62,7 @@ Only works with Tensorflow < 2.0 for the reason described above, made with
 Keras 2.3.1 but it should work with 2.2.4.
 
 This optimizer is suitable for approximating variational inference in a 
-neural network to provide probablistic output that provide upper and 
+neural network to provide probablistic output that provides upper and 
 lower confidence bounds on prediction.
 
 MIT License
