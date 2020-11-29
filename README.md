@@ -28,7 +28,7 @@ parameter updates instead of mean and standard deviations derived from a
 diagonal multivariate gaussian distribution, though those may be added 
 in the future.
 - The Pytorch version of Vadam also includes the ability to provide Monte 
-Carlos sampling to parameter updates, which is not included here. However, 
+Carlo sampling to parameter updates, which is not included here. However, 
 the ablation tests in appendix I.2 uses 1 Monte Carlo sample so this 
 simplification may not adversely affect variation too badly. 
 See [here](https://thinklab.com/content/2693564) for more information on the 
