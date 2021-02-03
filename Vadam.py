@@ -21,12 +21,12 @@ if K.backend() == 'tensorflow':
 class Vadam(Optimizer):
     """variational bayes Adam optimizer, same params as Keras Adam with
     
-    ARGS:
+    Args:
         - train_set_size (int): training dataset size
         - prior_prec (float): prior precision (1.0 is uninformative prior)
         - prec_init (float): precision
         
-    RETURNS:
+    Returns:
         weight-perturbed gradient updates 
     """
     def __init__(self, 
