@@ -1,3 +1,12 @@
+"""
+
+Sample hyperas script for tuning prior precision
+
+data() and model() functions must be created for Hyperas' use
+because it wraps Hyperopt
+
+"""
+
 import numpy as np
 import tensorflow as tf
 from keras import layers
@@ -12,6 +21,7 @@ from hyperas import optim
 from hyperas.distributions import choice, uniform
 from hyperopt import Trials, STATUS_OK, tpe
 
+
 def data():
     data = np.random.random((1000, 32))
     labels = np.random.random((1000, 10))
@@ -20,6 +30,7 @@ def data():
     val_labels = np.random.random((100, 10))
 
     return data, labels, val_data, val_labels
+
 
 def model(data, labels, val_data, val_labels):
 
@@ -38,17 +49,18 @@ def model(data, labels, val_data, val_labels):
                   metrics=['mae'],
                   optimizer=optimizer)
 
-        result = model.fit(data,
-                           labels,
-                           epochs=10,
-                           batch_size=32,
-                           validation_data=(val_data, val_labels))
+    result = model.fit(data,
+                       labels,
+                       epochs=10,
+                       batch_size=32,
+                       validation_data=(val_data, val_labels))
 
-        # get the lowest validation loss of each training epoch
-        validation_loss = np.amin(result.history['val_loss'])
-        print('Best loss of epoch:', validation_loss)
+     # get the lowest validation loss of each training epoch
+     validation_loss = np.amin(result.history['val_loss'])
+     print('Best loss of epoch:', validation_loss)
 
-        return {'loss': validation_loss, 'status': STATUS_OK, 'model': model}
+     return {'loss': validation_loss, 'status': STATUS_OK, 'model': model}
+
 
 best_run, best_model = optim.minimize(model=model,
                                       data=data,
